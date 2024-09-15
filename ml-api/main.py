@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
+from ner_tagging import Predictor, model, tokenizer
 
 
 app = FastAPI()
@@ -13,7 +14,8 @@ class InputData(BaseModel):
 def run_model(address: str):
     # This is where you will process the address with your ML model, 
     #currently reversed string for testing purposes
-    return address[::-1]
+    predictor = Predictor(model, tokenizer)
+    return predictor.predict(address)
 
 # Route to receive POST request
 @app.post("/predict/")

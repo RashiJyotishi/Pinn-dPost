@@ -24,6 +24,9 @@ class App extends React.Component{
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
+        <h1 className="text-3xl font-bold underline text-red-400">
+          Hey its a check for tailwind css
+        </h1>
         <p>{this.state.apiResponse}</p>
       </div>
     );

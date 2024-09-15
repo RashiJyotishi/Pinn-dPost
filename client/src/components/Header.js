@@ -13,6 +13,7 @@ const Header = () => {
 
     return (
         <header className="sticky top-0 z-50 flex flex-col md:flex-row bg-blueBg text-white">
+
             <nav className='w-full bg-transparent py-1.5'>
                 <div className='flex justify-between items-center max-w-6xl mx-auto'>
                     <Link to="/" className="flex">

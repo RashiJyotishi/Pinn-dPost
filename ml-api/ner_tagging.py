@@ -66,18 +66,12 @@ class Predictor:
         text = text.lower()
         # Extracting pincode
         pincode = re.findall(r'\b\d{6}\b', text)
-        if len(pincode) > 0:
-            pincode = pincode[0]
 
         # Extracting state
         regex='('
         for state in self.state_list:
             regex += state.lower()+'|'
         state = re.findall(regex[:-1]+')', text)
-        if len(state)>0:
-            state = state[0]
-        else:
-            state = None
             
         return pincode, state
 

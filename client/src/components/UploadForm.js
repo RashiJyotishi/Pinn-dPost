@@ -40,7 +40,7 @@ const UploadForm = () => {
   const renderTable = () => {
     if (!result) return null;
 
-    const tableHeaders = Object.keys(result.Pincode);
+    const tableHeaders = Object.keys(result);
 
     return (
       <table border="1">
@@ -52,19 +52,19 @@ const UploadForm = () => {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(result.Pincode).map((key) => (
+          {Object.keys(result).map((key) => (
             <tr key={key}>
-              <td>{result.Pincode[key]}</td>
-              <td>{result.CircleName[key]}</td>
-              <td>{result.RegionName[key]}</td>
-              <td>{result.DivisionName[key]}</td>
-              <td>{result.OfficeName[key]}</td>
-              <td>{result.OfficeType[key]}</td>
-              <td>{result.Delivery[key]}</td>
-              <td>{result.District[key]}</td>
-              <td>{result.StateName[key]}</td>
-              <td>{result.Latitude[key]}</td>
-              <td>{result.Longitude[key]}</td>
+              <td>{result[key].Pincode}</td>
+              <td>{result[key].CircleName}</td>
+              <td>{result[key].RegionName}</td>
+              <td>{result[key].DivisionName}</td>
+              <td>{result[key].OfficeName}</td>
+              <td>{result[key].OfficeType}</td>
+              <td>{result[key].Delivery}</td>
+              <td>{result[key].District}</td>
+              <td>{result[key].StateName}</td>
+              <td>{result[key].Latitude}</td>
+              <td>{result[key].Longitude}</td>
             </tr>
           ))}
         </tbody>

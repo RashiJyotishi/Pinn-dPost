@@ -11,6 +11,17 @@ DEV=True
 
 PINCODE_DATA_PATH = pathlib.Path(__file__).parent / 'pincode_list.feather'
 app = FastAPI()
+
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins, restrict this in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+post_office_data = pd.read_feather('./ml-api/pincode_list.feather')
 post_office_data = pd.read_feather(PINCODE_DATA_PATH)
 address_heirarchy = ['state', 'city_town', 'landmark', 'street', 'area_locality_name', 'sub_locality', 'society_name', 'flat_apartment_number']
 

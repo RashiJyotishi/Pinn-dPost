@@ -3,17 +3,17 @@ import logo from '../components/Vector.png';
 import { Link } from 'react-router-dom';
 
 const FooterLinks1 = [
-  { to: "/", label: "Home", external: false },
-  { to: "/about", label: "About", external: false },
-  { to: "/contributors", label: "Contributors", external: false },
-  { to: "/resources", label: "Resources", external: false },
+  {  to: "/", label: "Home", external: false  },
+  {  to: "/about", label: "About", external: false  },
+  {  to: "/contributors", label: "Contributors", external: false  },
+  {  to: "/resources", label: "Resources", external: false },
 ];
 
 const FooterLinks2 = [
-  { to: "/documentation", label: "Documantation", external: false },
-  { to: "https://github.com/RashiJyotishi/Pinn-dPost", label: "Github", external: true },
-  { to: "https://www.indiapost.gov.in/vas/Pages/IndiaPostHome.aspx", label: "Indian Postal Services", external: true },
-  { to: "https://www.sih.gov.in/#process-timeline", label: "About Smart India Hackathon", external: true },
+  {  to: "/documentation", label: "Documentation", external: false },
+  {  to: "https://github.com/RashiJyotishi/Pinn-dPost", label: "Github", external: true },
+  {  to: "https://www.indiapost.gov.in/vas/Pages/IndiaPostHome.aspx", label: "Indian Postal Services", external: true },
+  {  to: "https://www.sih.gov.in/#process-timeline", label: "About Smart India Hackathon", external: true },
 ];
 
 const Footer = () => {

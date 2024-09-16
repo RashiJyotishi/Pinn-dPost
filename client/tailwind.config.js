@@ -10,6 +10,8 @@ module.exports = {
         'offWhite': "#F8F9F1",
         'font-grey': "#9B9B9B",
         'white': "#FFFFFF",
+        'custom-light': '#F8F9F1',
+        'font-grey': "#9B9B9B",
       },
     },
   },

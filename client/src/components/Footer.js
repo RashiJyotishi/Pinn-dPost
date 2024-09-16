@@ -56,7 +56,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className='flex-col mr-28 my-16'>
+            <div className='flex-col mr-28 my-16 inline'>
               <form>
                 <p className='text-white font-light mb-2'>want to reach out?</p>
                 <label htmlFor='name' className='text-white mb-6'>Name</label>

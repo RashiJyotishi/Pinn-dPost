@@ -20,7 +20,7 @@ const Home = () => {
         <img
           className="h-[30rem] md:w-auto md:h-auto md:max-w-sm md:mr-8"
           src="/Group 16.png"
-          alt="Image"
+          alt="Img"
         />
 
         <div className="p-4 mr-10 rounded-lg der-black mr-border md:w-1/3">

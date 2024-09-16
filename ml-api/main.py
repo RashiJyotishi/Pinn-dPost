@@ -5,10 +5,11 @@ from ner_tagging import Predictor, model, tokenizer
 from location_req import get_loc
 import pandas as pd
 import numpy as np
+import pathlib
 
-
+PINCODE_DATA_PATH = pathlib.Path(__file__).parent / 'pincode_list.feather'
 app = FastAPI()
-post_office_data = pd.read_feather('./ml-api/pincode_list.feather')
+post_office_data = pd.read_feather(PINCODE_DATA_PATH)
 address_heirarchy = ['state', 'city_town', 'landmark', 'street', 'area_locality_name', 'sub_locality', 'society_name', 'flat_apartment_number']
 
 

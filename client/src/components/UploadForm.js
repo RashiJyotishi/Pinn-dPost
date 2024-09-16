@@ -84,7 +84,7 @@ const UploadForm = () => {
             required
           />
         </div>
-        <button type="submit" disabled={loading}>
+        <button type="submit" className=' bg-slate-950 text-white px-2 py-1 rounded-md mt-2'disabled={loading}>
           {loading ? 'Loading...' : 'Submit'}
         </button>
       </form>

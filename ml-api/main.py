@@ -6,12 +6,24 @@ from location_req import get_loc
 import pandas as pd
 import numpy as np
 import pathlib
+DEV=True
+
 
 PINCODE_DATA_PATH = pathlib.Path(__file__).parent / 'pincode_list.feather'
 app = FastAPI()
 post_office_data = pd.read_feather(PINCODE_DATA_PATH)
 address_heirarchy = ['state', 'city_town', 'landmark', 'street', 'area_locality_name', 'sub_locality', 'society_name', 'flat_apartment_number']
 
+# Allow CORS from all origins (for development purposes)
+if(DEV):
+    from fastapi.middleware.cors import CORSMiddleware
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],  # Allow all origins, restrict this in production
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 # Define request body
 class InputData(BaseModel):
@@ -49,7 +61,7 @@ def get_closest_postoffices(coordinates, k=5):
     k_indices = np.argsort(distances)[:k]
     
     # Return the data of k closest post-offices in dictionary format
-    return post_office_data.iloc[k_indices, :].to_dict()
+    return post_office_data.iloc[k_indices, :].T.to_dict()
 
 # Route to receive POST request
 @app.post("/predict/")

@@ -45,11 +45,11 @@ const UploadForm = () => {
     return (
       <table border="1">
         <thead>
-          <tr>
-            {tableHeaders.map((header, index) => (
-              <th key={index}>{header}</th>
-            ))}
-          </tr>
+          {/* <tr> */}
+            {/* {tableHeaders.map((header, index) => (
+              <th key={index}>{header}</th> 
+            ))} */}
+          {/* </tr> */}
         </thead>
         <tbody>
           {Object.keys(result).map((key) => (

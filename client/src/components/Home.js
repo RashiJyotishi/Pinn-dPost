@@ -15,7 +15,7 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="flex flex-col items-center justify-between py-4 mt-4 md:flex-row">
+      <div className="flex flex-col items-center py-4 mt-4 md:flex-row">
 
         <img
           className="h-[30rem] md:w-auto md:h-auto md:max-w-sm md:mr-8"

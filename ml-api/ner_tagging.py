@@ -6,7 +6,12 @@ from collections import Counter
 import warnings
 warnings.filterwarnings("ignore") 
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+if torch.backends.mps.is_available():
+    device = 'mps'
+elif torch.cuda.is_available():
+    device = 'cuda'
+else:
+    device = 'cpu'
 
 model_name = "distilbert-base-uncased"
 model_url = 'https://drive.usercontent.google.com/download?id=1GrFJUBnQY2Rqcqz6bgNvMT-oSCE-brdD&export=download&authuser=0&confirm=t&uuid=e45ba311-3eb6-4328-b794-f35d6ae8b1bd&at=AO7h07eRgotOvYM1JSGZYt6a6XsI%3A1726403818073'
@@ -134,6 +139,8 @@ class Predictor:
     def predict(self, sentence: str):
         if device == 'cuda':
             self.model = self.model.cuda()
+        elif torch.backends.mps.is_available():
+            self.model = self.model.to('mps')
         pincode, state = self.extract_pin_and_state(sentence)
         sentence = self.preprocess_text(sentence)
         text = self.tokenizer(sentence, padding='max_length', max_length=512, truncation=True, return_tensors="pt")

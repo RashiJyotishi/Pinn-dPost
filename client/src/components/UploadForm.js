@@ -75,18 +75,21 @@ const UploadForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Address:</label>
+        <div className=' border-black border-2 rounded-md p-2'>
+          <label className='text-font-grey'>Enter Address</label>
           <input
             type="text"
             value={address}
+            placeholder='Address'
             onChange={handleAddressChange}
+            className='block py-1 px-1 w-96 mb-2 border-black border-2 rounded-md p-2'
             required
           />
-        </div>
-        <button type="submit" className=' bg-slate-950 text-white px-2 py-1 rounded-md mt-2'disabled={loading}>
+          <button type="submit" className=' bg-slate-950 text-white px-2 py-1 rounded-md mt-2'disabled={loading}>
           {loading ? 'Loading...' : 'Submit'}
         </button>
+        </div>
+        
       </form>
 
       {/* Display result */}

@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
 
           <div id='bottomStuff' className=' flex text-center justify-center text-white text-lg mb-4' >
-            Made with <div className='inline-block scale-75'><img src={logo} alt='heart' /></div> by Team HexaCode
+            Made with <div className='inline-block scale-75'><img src={logo} alt='heart' /></div> by Team 0x6coders
           </div>
 
         </div>

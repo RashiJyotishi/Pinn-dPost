@@ -13,6 +13,9 @@ module.exports = {
         'custom-light': '#F8F9F1',
         'font-grey': "#9B9B9B",
       },
+      backgroundImage: {
+        'bike': "url('/public/Group 16.png')",
+      },
     },
   },
   plugins: [],

@@ -19,7 +19,7 @@ const FooterLinks2 = [
 const Footer = () => {
   return (
     <footer className="bg-offWhite">
-      <div className='bg-blueBg rounded-t-3xl flex w-screen justify-center align-middle h-full'>
+      <div className='bg-blueBg rounded-t-3xl flex w-full justify-center align-middle h-full'>
         <div className='flex-col justify-center'>
           <div id='topStuff' className='flex '>
             <div className='flex-col mr-28 text-xl my-10'>
